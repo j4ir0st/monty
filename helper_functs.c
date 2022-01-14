@@ -7,6 +7,7 @@
  * @line_count: line of command being executed
  * Return: the result of the functions called or -1 on failure
  */
+
 int match(stack_t **stack, char *tok_0, unsigned int line_count)
 {
 	int pos = 0, s_c = 0;
@@ -19,6 +20,14 @@ int match(stack_t **stack, char *tok_0, unsigned int line_count)
 	    {"swap", fswap},
 	    {"add", fadd},
 	    {"nop", fnop},
+	    {"sub", fsub},
+	    {"div", fdiv},
+	    {"mul", fmul},
+	    {"mod", f1mod},
+	    {"pchar", fpchar},
+	    {"pstr", fpstr},
+	    {"rotl", frotl},
+	    {"rotr", frotr},
 	    {NULL, NULL}};
 	while (match_store[pos].opcode)
 	{
@@ -38,6 +47,7 @@ int match(stack_t **stack, char *tok_0, unsigned int line_count)
  * @is_number: the string represents an integer
  * Return: length on success, 0 on failure
  */
+
 int check_isnumber(char *is_number)
 {
 	int c = 0, i = 0;
@@ -58,6 +68,7 @@ int check_isnumber(char *is_number)
  * _free - Frees a dlistint_t list.
  * @stack: Double pointer to struct.
  */
+
 void _free(stack_t **stack)
 {
 	if (*stack)
@@ -72,6 +83,7 @@ void _free(stack_t **stack)
  * @status: id of type of error
  * @file_name: name of file
  */
+
 void print_error(int status, char *file_name)
 {
 	switch (status)
@@ -93,6 +105,7 @@ void print_error(int status, char *file_name)
  * @file_name: file name
  * Return: 0 if success, -1 if error
  */
+
 int get_file(int argc, char *file_name)
 {
 	if (argc != 2)
