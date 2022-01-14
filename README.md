@@ -61,9 +61,9 @@ TBU
 # General Considerations:
 > * Compiled with: gcc -Wall -Werror -Wextra -pedantic -std=gnu89
 > * Code compliant with Betty style and betty doc
-> * Global Variables Not Allowed
+> * Global Variables Allowed
 > * Maximum of 5 functions per file
-> * C libraries allowed: malloc, free and exit.
+
 
 # Contact Information:
 
