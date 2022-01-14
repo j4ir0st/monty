@@ -36,6 +36,7 @@ void fpchar(stack_t **stack, unsigned int line_number)
 void fpstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
+	(void)line_number;
 
 	if (*stack == NULL)
 	{
@@ -62,6 +63,7 @@ void frotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 	int tmp_v;
+	(void)line_number;
 
 	if (!(*stack))
 	{
@@ -87,6 +89,7 @@ void frotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 	int tmp_v;
+	(void)line_number;
 
 	if (!(*stack))
 	{

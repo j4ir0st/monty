@@ -46,6 +46,7 @@ void fpush(stack_t **stack, unsigned int line_number)
 void fpall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
+	(void)line_number;
 
 	while (tmp != NULL)
 	{

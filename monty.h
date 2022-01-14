@@ -1,3 +1,7 @@
+#ifndef MONTY_H
+#define MONTY_H
+
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,8 +13,6 @@
 #include <stdarg.h>
 #include <stdbool.h>
 #include <ctype.h>
-
-#define _GNU_SOURCE
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -62,6 +64,7 @@ void frotl(stack_t **stack, unsigned int line_number);
 void frotr(stack_t **stack, unsigned int line_number);
 int check_isnumber(char *is_number);
 void _free(stack_t **stack);
+int get_file(int argc, char *file_name);
 
 extern int val;
 extern bool c_arg;
