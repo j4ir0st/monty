@@ -116,7 +116,7 @@ int get_file(int argc, char *file_name)
 	fp = fopen(file_name, "r");
 	if (!fp)
 	{
-		fprintf(stderr, "Error: Can't open file '%s'\n", file_name);
+		fprintf(stderr, "Error: Can't open file %s\n", file_name);
 		return (-1);
 	}
 	return (0);
