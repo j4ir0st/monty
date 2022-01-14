@@ -58,6 +58,6 @@ int main(int argc, char **argv)
 		}
 		line_count++;
 	}
-	printf("\n"), fclose(fp), _free(&stack), free(*token);
+	fclose(fp), _free(&stack), free(*token);
 	return (0);
 }
