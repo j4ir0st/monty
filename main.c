@@ -27,8 +27,16 @@ int main(int argc, char **argv)
 		if (line == EOF)
 			break;
 		token[0] = strtok(line_buf, "\n "), token[1] = strtok(NULL, "\n ");
-		if (!token[0] || strncmp(token[0], "#", 1) == 0)
+		if (!token[0])
+		{
+			line_count++;
 			continue;
+		}
+		if (strncmp(token[0], "#", 1) == 0)
+		{
+			line_count++;
+			continue;
+		}
 		if (token[1])
 		{
 			if (check_isnumber(token[1]))
