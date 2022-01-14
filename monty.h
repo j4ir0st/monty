@@ -62,6 +62,7 @@ void fpchar(stack_t **stack, unsigned int line_number);
 void fpstr(stack_t **stack, unsigned int line_number);
 void frotl(stack_t **stack, unsigned int line_number);
 void frotr(stack_t **stack, unsigned int line_number);
+void exist_token(char *token);
 int check_isnumber(char *is_number);
 void _free(stack_t **stack);
 int get_file(int argc, char *file_name);

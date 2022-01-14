@@ -11,6 +11,7 @@ FILE *fp;
  * @argv: string of arguments
  * Return: 0 on success
  */
+
 int main(int argc, char **argv)
 {
 	char *line_buf = NULL;
@@ -19,8 +20,7 @@ int main(int argc, char **argv)
 	int line_count = 1;
 	char line = 0;
 
-	if (get_file(argc, (argc == 2) ? argv[1] : NULL) == -1)
-		return (EXIT_FAILURE);
+	get_file(argc, (argc == 2) ? argv[1] : NULL);
 	while (line != EOF)
 	{
 		line = getline(&line_buf, &line_buf_size, fp);
@@ -37,17 +37,7 @@ int main(int argc, char **argv)
 			line_count++;
 			continue;
 		}
-		if (token[1])
-		{
-			if (check_isnumber(token[1]))
-			{
-				c_arg = true, val = atoi(token[1]);
-			}
-			else
-				c_arg = false;
-		}
-		else
-			c_arg = false;
+		exist_token(token[1]);
 		if (match(&stack, token[0], line_count))
 			c_arg = true;
 		else
@@ -60,4 +50,28 @@ int main(int argc, char **argv)
 	}
 	fclose(fp), _free(&stack), free(*token);
 	return (0);
+}
+
+/**
+ * exist_token - Cheks if the token exists
+ * @token: pointer of the token to check
+ */
+
+void exist_token(char *token)
+{
+	if (token)
+	{
+		if (check_isnumber(token))
+		{
+			c_arg = true, val = atoi(token);
+		}
+		else
+		{
+			c_arg = false;
+		}
+	}
+	else
+	{
+		c_arg = false;
+	}
 }
