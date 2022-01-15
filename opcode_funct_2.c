@@ -41,6 +41,14 @@ void fadd(stack_t **stack, unsigned int line_number)
 {
 	int suma;
 
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%i: can't swap, stack too short\n", line_number);
+		_free(stack);
+		free(*token);
+		fclose(fp);
+		exit(EXIT_FAILURE);
+	}
 	if ((*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%i: can't add, stack too short\n", line_number);
