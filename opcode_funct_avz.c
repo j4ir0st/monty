@@ -10,6 +10,14 @@ void fsub(stack_t **stack, unsigned int line_number)
 {
 	int resta;
 
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%i: can't sub, stack too short\n", line_number);
+		_free(stack);
+		free(*token);
+		fclose(fp);
+		exit(EXIT_FAILURE);
+	}
 	if ((*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%i: can't sub, stack too short\n", line_number);
