@@ -65,7 +65,7 @@ void frotl(stack_t **stack, unsigned int line_number)
 	int tmp_v;
 	(void)line_number;
 
-	if (!(*stack))
+	if (!(*stack) || (*stack)->next == NULL)
 	{
 		return;
 	}
