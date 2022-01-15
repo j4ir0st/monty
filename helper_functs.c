@@ -111,13 +111,13 @@ int get_file(int argc, char *file_name)
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		return (-1);
+		exit(EXIT_FAILURE);
 	}
 	fp = fopen(file_name, "r");
 	if (!fp)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", file_name);
-		return (-1);
+		exit(EXIT_FAILURE);
 	}
 	return (0);
 }
