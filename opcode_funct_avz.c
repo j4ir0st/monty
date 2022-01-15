@@ -72,7 +72,7 @@ void fmul(stack_t **stack, unsigned int line_number)
 {
 	int mul;
 
-	if ((*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%i: can't mul, stack too short\n", line_number);
 		_free(stack);
