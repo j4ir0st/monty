@@ -95,7 +95,7 @@ void f1mod(stack_t **stack, unsigned int line_number)
 {
 	int mod;
 
-	if ((*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%i: can't mod, stack too short\n", line_number);
 		_free(stack);
