@@ -41,7 +41,7 @@ void fdiv(stack_t **stack, unsigned int line_number)
 {
 	int div;
 
-	if ((*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%i: can't div, stack too short\n", line_number);
 		_free(stack);
