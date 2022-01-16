@@ -93,7 +93,7 @@ void frotr(stack_t **stack, unsigned int line_number)
 	int tmp_v;
 	(void)line_number;
 
-	if (!(*stack))
+	if (!(*stack) || (*stack)->next == NULL)
 	{
 		return;
 	}
@@ -103,5 +103,10 @@ void frotr(stack_t **stack, unsigned int line_number)
 		tmp = tmp->next;
 	}
 	tmp_v = tmp->n;
+	while (tmp->prev)
+	{
+		tmp->n = tmp->prev->n;
+		tmp = tmp->prev;
+	}
 	tmp->n = tmp_v;
 }
