@@ -49,9 +49,10 @@ void fpstr(stack_t **stack, unsigned int line_number)
 			printf("\n");
 			break;
 		}
-		printf("%c\n", tmp->n);
+		printf("%c", tmp->n);
 		tmp = tmp->next;
 	}
+	printf("\n");
 }
 
 /**
