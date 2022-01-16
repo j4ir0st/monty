@@ -44,8 +44,9 @@ void fpstr(stack_t **stack, unsigned int line_number)
 	}
 	while (tmp != NULL)
 	{
-		if (tmp->n == 0 || !__isascii(tmp->n))
+		if (!tmp->n || !__isascii(tmp->n))
 		{
+			printf("\n");
 			break;
 		}
 		printf("%c\n", tmp->n);
