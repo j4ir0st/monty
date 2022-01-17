@@ -28,6 +28,8 @@ int match(stack_t **stack, char *tok_0, unsigned int line_count)
 		{"pstr", fpstr},
 		{"rotl", frotl},
 		{"rotr", frotr},
+		{"stack", fstack},
+		{"queue", fqueue},
 		{NULL, NULL}};
 	while (match_store[pos].opcode)
 	{

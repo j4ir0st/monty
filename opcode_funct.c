@@ -27,14 +27,14 @@ void fpush(stack_t **stack, unsigned int line_number)
 		fclose(fp);
 		exit(EXIT_FAILURE);
 	}
-	if (*stack)
+	if (st_q == false)
 	{
-		(*stack)->prev = new_st;
+		add_node_beg(stack, new_st);
 	}
-	new_st->n = val;
-	new_st->next = *stack;
-	new_st->prev = NULL;
-	*stack = new_st;
+	if (st_q == true)
+        {
+		add_node_end(stack, new_st);
+        }
 }
 
 /**

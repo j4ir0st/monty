@@ -2,6 +2,7 @@
 
 int val = 0;
 bool c_arg = false;
+bool st_q = false;
 char *token[1024];
 FILE *fp;
 
